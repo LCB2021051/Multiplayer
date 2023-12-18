@@ -1,0 +1,58 @@
+[
+	{
+		"file": "C:\\Users\\vivek\\Desktop\\Unreal_Projects\\Multiplayer\\Source\\Multiplayer\\Multiplayer.Build.cs",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.34.31933\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\vivek\\Desktop\\Unreal_Projects\\Multiplayer\\.vscode\\compileCommands_Default\\Multiplayer.261.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\vivek\\Desktop\\Unreal_Projects\\Multiplayer\\Source\\Multiplayer\\Multiplayer.cpp",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.34.31933\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\vivek\\Desktop\\Unreal_Projects\\Multiplayer\\.vscode\\compileCommands_Default\\Multiplayer.261.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\vivek\\Desktop\\Unreal_Projects\\Multiplayer\\Source\\Multiplayer\\Multiplayer.h",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.34.31933\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\vivek\\Desktop\\Unreal_Projects\\Multiplayer\\.vscode\\compileCommands_Default\\Multiplayer.261.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\vivek\\Desktop\\Unreal_Projects\\Multiplayer\\Source\\Multiplayer\\MultiplayerCharacter.cpp",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.34.31933\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\vivek\\Desktop\\Unreal_Projects\\Multiplayer\\.vscode\\compileCommands_Default\\Multiplayer.261.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\vivek\\Desktop\\Unreal_Projects\\Multiplayer\\Source\\Multiplayer\\MultiplayerCharacter.h",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.34.31933\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\vivek\\Desktop\\Unreal_Projects\\Multiplayer\\.vscode\\compileCommands_Default\\Multiplayer.261.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\vivek\\Desktop\\Unreal_Projects\\Multiplayer\\Source\\Multiplayer\\MultiplayerGameMode.cpp",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.34.31933\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\vivek\\Desktop\\Unreal_Projects\\Multiplayer\\.vscode\\compileCommands_Default\\Multiplayer.261.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\vivek\\Desktop\\Unreal_Projects\\Multiplayer\\Source\\Multiplayer\\MultiplayerGameMode.h",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.34.31933\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\vivek\\Desktop\\Unreal_Projects\\Multiplayer\\.vscode\\compileCommands_Default\\Multiplayer.261.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.2\\Engine\\Source"
+	}
+]
