@@ -3,6 +3,8 @@
 
 #include "MyBox.h"
 #include "Net/UnrealNetwork.h"
+#include "Kismet/GameplayStatics.h"
+
 
 // Sets default values
 AMyBox::AMyBox()
@@ -23,7 +25,7 @@ void AMyBox::BeginPlay()
 
 	if(HasAuthority())
 	{
-		GetWorld()->GetTimerManager().SetTimer(TestTimer,this,&AMyBox::DecreaseReplicatedVar,2.0f,false);
+		GetWorld()->GetTimerManager().SetTimer(TestTimer,this,&AMyBox::NetMulticastRPCExplode,2.0f,false);
 	}
 }
 
@@ -70,4 +72,25 @@ void AMyBox::DecreaseReplicatedVar()
 	}
 }
 
-
+void AMyBox::NetMulticastRPCExplode_Implementation()
+{
+	if(HasAuthority())
+	{
+		// GEngine->AddOnScreenDebugMessage(-1,3.0f,FColor::Green,TEXT("Server: NetMulticastFunction_Implementation"));
+		GetWorld()->GetTimerManager().SetTimer(TestTimer,this,&AMyBox::NetMulticastRPCExplode,2.0f,false);
+	}
+	else
+	{
+		// GEngine->AddOnScreenDebugMessage(-1,3.0f,FColor::Red,TEXT("Client: NetMulticastFunction_Implementation"));
+	}
+	if(!IsRunningDedicatedServer())
+	{
+		UGameplayStatics::SpawnEmitterAtLocation(
+			GetWorld(),
+			ExplodeEffect,
+			GetActorLocation()+FVector(0,0,100.0f),
+			FRotator::ZeroRotator,
+			true,
+			EPSCPoolMethod::AutoRelease);
+	}
+}

@@ -67,8 +67,13 @@ public:
 	void ServerRPCFunction(int Value);
 
 	UPROPERTY(EditAnywhere)
-	UStaticMesh* SphereMesh;
+	UStaticMesh* SphereMesh; 
 
+	UFUNCTION(Client,Reliable,WithValidation,BlueprintCallable)
+	void ClientRPCFunction();
+
+	UPROPERTY(EditAnywhere)
+	UParticleSystem* ParticleEffect;
 
 };
 

@@ -68,8 +68,6 @@ void AMultiplayerCharacter::BeginPlay()
 	}
 }
 
-
-
 //////////////////////////////////////////////////////////////////////////
 // Input
 
@@ -135,6 +133,10 @@ void AMultiplayerCharacter::ServerRPCFunction_Implementation(int Value)
 		// GEngine->AddOnScreenDebugMessage(-1,10.0f,FColor::Red,
 		// 		TEXT("Server: ServerRPC_Implementation"));
 	}
+	else{
+		// GEngine->AddOnScreenDebugMessage(-1,10.0f,FColor::Green,
+		// 		TEXT("Server: ServerRPC_Implementation"));
+	}
 	
 	GEngine->AddOnScreenDebugMessage(-1,10.0f,FColor::Red,
 				FString::Printf(TEXT("Value : %d"),Value));
@@ -144,7 +146,13 @@ void AMultiplayerCharacter::ServerRPCFunction_Implementation(int Value)
 		return;
 	}
 
-	AStaticMeshActor *StaticMeshActor = GetWorld()->SpawnActor<AStaticMeshActor>(AStaticMeshActor::StaticClass());
+	FActorSpawnParameters SpawnParameters;
+	SpawnParameters.Owner = this;
+
+
+	// AStaticMeshActor *StaticMeshActor = GetWorld()->SpawnActor<AStaticMeshActor>(AStaticMeshActor::StaticClass());
+	AStaticMeshActor *StaticMeshActor = GetWorld()->SpawnActor<AStaticMeshActor>(SpawnParameters);
+	// StaticMeshActor->SetOwner(this);
 
 	if(StaticMeshActor)
 	{
@@ -165,7 +173,6 @@ void AMultiplayerCharacter::ServerRPCFunction_Implementation(int Value)
 			}
 		}
 	}
-
 }
 
 bool AMultiplayerCharacter::ServerRPCFunction_Validate(int Value)
@@ -177,3 +184,18 @@ bool AMultiplayerCharacter::ServerRPCFunction_Validate(int Value)
 	return false;
 }
 
+void AMultiplayerCharacter::ClientRPCFunction_Implementation()
+{
+	if(!ParticleEffect)
+	{
+		return;
+	}
+
+	UGameplayStatics::SpawnEmitterAtLocation(
+		GetWorld(),
+		ParticleEffect,
+		GetActorLocation()+FVector(100.0f,0,0),
+		FRotator::ZeroRotator,
+		true,
+		EPSCPoolMethod::AutoRelease);
+}

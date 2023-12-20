@@ -4,7 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Particles/ParticleSystem.h"
+
 #include "MyBox.generated.h"
+
 
 UCLASS()
 class MULTIPLAYER_API AMyBox : public AActor
@@ -35,5 +38,9 @@ public:
 	void DecreaseReplicatedVar();
 	FTimerHandle TestTimer;
 
-	
+	UFUNCTION(NetMulticast,Reliable,BlueprintCallable)
+	void NetMulticastRPCExplode();
+
+	UPROPERTY(EditAnywhere)
+	UParticleSystem* ExplodeEffect;
 };
