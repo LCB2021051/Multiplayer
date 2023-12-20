@@ -11,6 +11,8 @@
 #include "EnhancedInputSubsystems.h"
 #include "Net/UnrealNetwork.h"
 #include "Engine/StaticMeshActor.h"
+#include "Kismet/GameplayStatics.h"
+
 
 
 //////////////////////////////////////////////////////////////////////////
@@ -194,7 +196,7 @@ void AMultiplayerCharacter::ClientRPCFunction_Implementation()
 	UGameplayStatics::SpawnEmitterAtLocation(
 		GetWorld(),
 		ParticleEffect,
-		GetActorLocation()+FVector(100.0f,0,0),
+		GetActorLocation()+FVector(-100.0f,0,0),
 		FRotator::ZeroRotator,
 		true,
 		EPSCPoolMethod::AutoRelease);
